@@ -1,0 +1,26 @@
+<div id="{{ item?.id }}">
+  <img [src]="item?.image" alt="">
+  <p><strong>Name:</strong> {{ item?.name }}</p>
+  <p data-info="description">
+    <strong>Description:</strong> {{ item?.description }}
+  </p>
+  <p><strong>Company:</strong> {{ item?.company }}</p>
+  <p><strong>On sale:</strong>
+    <span *ngIf="item?.available === true">
+      <i class="fa fa-check-square" aria-hidden="true"></i>
+    </span>
+    <span *ngIf="item?.available === false">
+      <i class="fa fa-window-close" aria-hidden="true"></i>
+    </span>
+  </p>
+  <p><strong>Price:</strong> {{ item?.price }} UAH</p>
+  <p><strong>Available in stock:</strong>
+    <span *ngIf="item?.instock === true">
+      <i class="fa fa-check-square" aria-hidden="true"></i>
+    </span>
+    <span *ngIf="item?.instock === false">
+      <i class="fa fa-window-close" aria-hidden="true"></i>
+    </span>
+  </p>
+  <button (click)="add(item.name)" class="btn btn-success" [disabled]="item?.available === false">Add to cart</button>
+</div>

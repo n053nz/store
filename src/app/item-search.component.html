@@ -1,0 +1,9 @@
+<div id="search-component">
+  <h4>Search</h4>
+  <input placeholder="Start typing a product name" #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <div>
+    <div *ngFor="let item of heroes | async" (click)="gotoDetail(item)" class="search-result">
+      {{item.name}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<form action="">
+  <div class="main-filters">
+
+    <section id="instockFilter">
+      <h4>In stock filter <span data-info="not-finished">(not finished)</span></h4>
+      <form action="">
+        <select>
+          <option value="null" selected>Available in stock?</option> <!-- [(ngModel)]="instockStatus" [ngModelOptions]="{standalone: true}" -->
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+
+        <!-- <div *ngFor="let item of heroes | instockPipe: ['instock', instockStatus]">
+          {{ item.name }}
+        </div> -->
+      </form>
+    </section>
+
+    <section id="priceFilter">
+      <h4>Price filter <span data-info="not-finished">(not finished)</span></h4>
+      <input type="number" placeholder="from" min="0">
+      <input type="number" placeholder="to" min="0">
+      <input title="Select price range" type="range" min="0" max="100" step="1" value="0">
+    </section>
+
+    <hero-search></hero-search>
+
+  </div>
+</form>
+
+<div *ngIf="itemsToCart.length" data-info="cartItems">
+  {{ itemsToCart.length }}
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let item of heroes" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <article>
+      <div id="{{ item.id }}">
+        <img [src]="item.image" alt="">
+        <p><strong>Name:</strong> {{ item.name }}</p>
+        <p data-info="description" title="{{ item.description }}">
+          <strong>Description:</strong> {{ item.description}}
+        </p>
+        <p><strong>Company:</strong> {{ item.company }}</p>
+        <p><strong>On sale:</strong>
+          <span *ngIf="item.available === true">
+          <i class="fa fa-check-square" aria-hidden="true"></i>
+        </span>
+          <span *ngIf="item.available === false">
+          <i class="fa fa-window-close" aria-hidden="true"></i>
+        </span>
+        </p>
+        <p data-info="price"><strong>Price:</strong> {{ item.price }} UAH</p>
+        <button (click)="add(item.name)" class="btn btn-info" [disabled]="item.available === false">Add to cart</button>
+        <button class="btn btn-success" (click)="onSelect(item); gotoDetail(item)">View details</button>
+      </div>
+    </article>
+  </li>
+</ul>

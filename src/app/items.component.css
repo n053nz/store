@@ -1,0 +1,99 @@
+input[type="range"] {
+    width: 350px; 
+    display: inline-block;
+}
+
+select {
+    padding: 0 5px;
+}
+
+.main-filters {
+    background: orange;
+    padding: 15px;
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;
+}
+
+article {
+    margin: 10px 0;
+}
+
+article > div {
+    background: rgba(255,255,255,.4);
+    padding: 10px;
+    position: relative;
+}
+
+img {
+    padding-bottom: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+[data-info="description"]:hover {
+    cursor: help;
+}
+
+.fa.fa-check-square {
+    color: green;
+}
+
+.fa.fa-window-close {
+    color: red;
+}
+
+[data-info="description"] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[data-info="price"] {
+    padding-bottom: 25px;
+}
+
+input[type="range"] {
+    display: block;
+}
+
+[data-info="not-finished"] {
+    background: #fff;
+    color: red;
+    border-radius: 75%;
+    padding: 10px;
+}
+
+button {
+    position: absolute;
+    bottom: 5px;
+}
+
+.btn-info {
+    left: 5px;
+}
+
+.btn-success {
+    right: 5px;
+}
+
+select {
+    margin: 10px 0;
+}
+
+input[type="number"] {
+    margin: 15px 0;
+}
+
+[data-info="cartItems"] {
+    position: absolute;
+    top: 111px;
+    left: 192px;
+    background: yellow;
+    color: #000;
+    border-radius: 25%;
+    padding: 3px;
+    font-size: 10px;
+}

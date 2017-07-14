@@ -1,0 +1,19 @@
+.fa.fa-check-square {
+    color: green;
+}
+
+.fa.fa-window-close {
+    color: red;
+}
+
+div {
+    width: 50%;
+    margin: 0 auto;
+    padding: 25px;
+    background: rgba(255,255,255,.4);
+}
+
+img {
+    display: block;
+    margin: 0 auto 15px;
+}

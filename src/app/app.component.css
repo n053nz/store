@@ -1,0 +1,9 @@
+nav {
+    padding: 0 0 15px 0;
+}
+
+a {
+    transition: all .3s linear;
+    color: #000;
+    display: inline-block;
+}
